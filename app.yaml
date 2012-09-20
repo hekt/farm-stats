@@ -1,0 +1,15 @@
+application: farm-stats
+version: 2-0-0
+runtime: python
+api_version: 1
+
+handlers:
+- url: /tasks/update
+  script: Scraping.py
+  login: admin
+- url: /styles
+  static_dir: styles
+- url: /scripts
+  static_dir: scripts
+- url: /.*
+  script: wsgi.py

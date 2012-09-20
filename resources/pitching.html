@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block view_items %}
+      <ul>
+        <li class="team"><label><input type="checkbox" name="team" value="team" checked>チーム</label></li>
+        <li class="throws"><label><input type="checkbox" name="throws" value="throws" checked>利き腕</label></li>
+        <li class="name"><label><input type="checkbox" name="name" value="name" checked>名前</label></li>
+        <li class="g"><label><input type="checkbox" name="g" value="g" checked>試合数</label></li>
+        <li class="w"><label><input type="checkbox" name="w" value="w" checked>勝利</label></li>
+        <li class="l"><label><input type="checkbox" name="l" value="l" checked>敗北</label></li>
+        <li class="sv"><label><input type="checkbox" name="sv" value="sv" checked>セーブ</label></li>
+        <li class="cg"><label><input type="checkbox" name="cg" value="cg">完投</label></li>
+        <li class="sho"><label><input type="checkbox" name="sho" value="sho">完封</label></li>
+      </ul>
+      <ul>
+        <li class="zbc"><label><input type="checkbox" name="zbc" value="zbc">無四球</label></li>
+        <li class="wpct"><label><input type="checkbox" name="wpct" value="wpct" checked>勝率</label></li>
+        <li class="bf"><label><input type="checkbox" name="bf" value="bf" checked>打者</label></li>
+        <li class="ip"><label><input type="checkbox" name="ip" value="ip" checked>投球回</label></li>
+        <li class="h"><label><input type="checkbox" name="h" value="h" checked>被安打</label></li>
+        <li class="hr"><label><input type="checkbox" name="hr" value="hr" checked>被本塁打</label></li>
+        <li class="bb"><label><input type="checkbox" name="bb" value="bb" checked>与四球</label></li>
+        <li class="ibb"><label><input type="checkbox" name="ibb" value="ibb">故意四球</label></li>
+        <li class="hb"><label><input type="checkbox" name="hb" value="hb" checked>与死球</label></li>
+      </ul>
+      <ul>
+        <li class="so"><label><input type="checkbox" name="so" value="so" checked>奪三振</label></li>
+        <li class="wp"><label><input type="checkbox" name="wp" value="wp" checked>暴投</label></li>
+        <li class="bk"><label><input type="checkbox" name="bk" value="bk" checked>ボーク</label></li>
+        <li class="r"><label><input type="checkbox" name="r" value="r" checked>失点</label></li>
+        <li class="er"><label><input type="checkbox" name="er" value="er" checked>自責点</label></li>
+        <li class="era"><label><input type="checkbox" name="era" value="era" checked>防御率</label></li>
+        <li class="whip"><label><input type="checkbox" name="whip" value="whip" checked>WHIP</label></li>
+        <li class="fip"><label><input type="checkbox" name="fip" value="fip">FIP</label></li>
+        <li class="lobp"><label><input type="checkbox" name="lobp" value="lobp">LOB%</label></li>
+      </ul>
+      <ul>
+        <li class="kbb"><label><input type="checkbox" name="kbb" value="kbb">K/BB</label></li>
+        <li class="k9"><label><input type="checkbox" name="k9" value="k9">K/9</label></li>
+        <li class="bb9"><label><input type="checkbox" name="bb9" value="bb9">BB/9</label></li>
+        <li class="hr9"><label><input type="checkbox" name="hr9" value="hr9">HR/9</label></li>
+        <li class="ipg"><label><input type="checkbox" name="ipg" value="ipg">IP/G</label></li>
+        <li class="babip"><label><input type="checkbox" name="babip" value="babip">BABIP</label></li>
+      </ul>
+{% endblock %}
+
+{% block filter %}
+    <h1>投球回フィルタ</h1>
+    <form>
+    <input type="text" name="pa_filter" value="投球回フィルタ">
+    </form>
+    <dl>
+      <dt><b>Enter</b></dt><dd><b>フィルタ実行</b></dd>
+      <dt>260<dt><dd>260イニング以上</dd>
+      <dt>r</dt><dd>規定イニング以上</dd>
+      <dt>&lt;10</dt><dd>10イニング未満</dd>
+      <dt>&gt;7</dt><dd>7イニング超</dd>
+      <dt>&lt;=626</dt><dd>626イニング以下</dd>
+    </dl>
+{% endblock %}
+
+{% block tableheader %}
+    <tr>
+      <th class="team">チーム</th>
+      <th class="throws">利き腕</th>
+      <th class="name">名前</th>
+      <th class="g">試合数</th>
+      <th class="w">勝利</th>
+      <th class="l">敗北</th>
+      <th class="sv">セーブ</th>
+      <th class="cg hide_column">完投</th>
+      <th class="sho hide_column">完封</th>
+      <th class="zbc hide_column">無四球</th>
+      <th class="wpct">勝率</th>
+      <th class="bf">打者</th>
+      <th class="ip">投球回</th>
+      <th class="h">被安打</th>
+      <th class="hr">被本塁打</th>
+      <th class="bb">与四球</th>
+      <th class="ibb hide_column">故意四球</th>
+      <th class="hb">与死球</th>
+      <th class="so">奪三振</th>
+      <th class="wp">暴投</th>
+      <th class="bk">ボーク</th>
+      <th class="r">失点</th>
+      <th class="er">自責点</th>
+      <th class="era">防御率</th>
+      <th class="whip">WHIP</th>
+      <th class="fip hide_column">FIP</th>
+      <th class="lobp hide_column">LOB%</th>
+      <th class="kbb hide_column">K/BB</th>
+      <th class="k9 hide_column">K/9</th>
+      <th class="bb9 hide_column">BB/9</th>
+      <th class="hr9 hide_column">HR/9</th>
+      <th class="ipg hide_column">IP/G</th>
+      <th class="babip hide_column">BABIP</th>
+    </tr>
+{% endblock %}
